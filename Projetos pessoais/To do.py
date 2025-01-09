@@ -1,6 +1,23 @@
 # -*- coding: utf-8 -*-
-#Funçoes
+import os
 #Mensagem de boas-vindas e Menu de opções
+
+#to do: carregar tarefas e adicionar tarefas
+#Criar arquivo tarefas.txt
+pergunta = input("Deseja criar um arquivo? (S/N): ").upper()
+if pergunta == "S":
+    temp = input("Please Enter File Name to create: ")
+    if not temp.endswith(".txt"):
+        temp += ".txt"
+    if os.path.exists(temp):
+        print("File already exists!")
+    else:
+        with open(temp, "w") as FileName:
+            print("File Created!"+"\n")
+else:
+    pass
+
+
 def menu():
     print('-'*40)
     print('LISTA DE TAREFAS'.center(40))
@@ -12,6 +29,9 @@ def menu():
     print('5 - Sair'.ljust(40))
     print('-'*40)
 
+#carregar tarefas
+
+
 
 #Recolher a escolha do usuário
 def ver_tarefas():
@@ -22,6 +42,7 @@ def ver_tarefas():
             status = 'Concluida' if tarefa['Concluida'] else 'Pendente'
             print(f'{i+1} - {tarefa["Nome"]} - {status}')
 
+#Adicionar tarefa
 def adicionar_tarefa():
     tarefa = input('Digite a tarefa: ').title().strip()
     if any(t['Nome'] == tarefa for t in tarefas):
@@ -29,7 +50,35 @@ def adicionar_tarefa():
         return
     tarefas.append({'Nome': tarefa, 'Concluida': False})
     print('({}) adicionada com sucesso!'.format(tarefa))
-    
+
+#Rmover tarefa
+def remover_tarefa():
+    ver_tarefas()
+    try:
+        escolha = int(input('Escolha a tarefa que deseja remover: '))
+        if escolha > 0 and escolha <= len(tarefas):
+            tarefa_removida = tarefas.pop(escolha - 1)
+            print('({}) removida com sucesso!'.format(tarefa_removida['Nome']))
+        else:
+            print('Tarefa inválida. Por favor, escolha uma tarefa válida.')
+    except ValueError:
+        print('Opção inválida. Por favor, escolha uma opção válida.')
+
+#Modificar tarefa
+def modificar_tarefa():
+    ver_tarefas()
+    try:
+        escolha = int(input('Escolha a tarefa que deseja modificar: '))
+        if escolha > 0 and escolha <= len(tarefas):
+            tarefa_modificada = tarefas[escolha - 1]
+            tarefa_modificada['Concluida'] = not tarefa_modificada['Concluida']
+            print('Tarefa modificada com sucesso!')
+        else:
+            print('Tarefa inválida. Por favor, escolha uma tarefa válida.')
+    except ValueError:
+        print('Opção inválida. Por favor, escolha uma opção válida.')
+
+#Programa principal
 tarefas = []
 while True:
     menu()
@@ -41,15 +90,14 @@ while True:
         elif escolha == 2:
             adicionar_tarefa()
         elif escolha == 3:
-            print('Remover tarefa')
+            remover_tarefa()
         elif escolha == 4:
-            print('Modificar tarefa')
+            modificar_tarefa()
         elif escolha == 5:
             print('Sair')
+            print('Obrigado por usar o programa!')
             break
         else:
             print('Opção inválida. Por favor, escolha uma opção válida.')
     except ValueError:
         print('Opção inválida. Por favor, escolha uma opção válida.')
-
-
