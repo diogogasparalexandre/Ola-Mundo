@@ -1,3 +1,5 @@
+#Funçoes
+#Mensagem de boas-vindas e Menu de opções
 def menu():
     print('-'*40)
     print('LISTA DE TAREFAS'.center(40))
@@ -8,7 +10,6 @@ def menu():
     print('4 - Sair'.ljust(40))
     print('-'*40)
 
-tarefas = []
 #Recolher a escolha do usuário
 
 def ver_tarefas():
@@ -17,7 +18,8 @@ def ver_tarefas():
     else:
         for tarefa in tarefas:
             print(tarefa)
-
+            
+tarefas = []
 while True:
     menu()
     escolha = int(input('Escolha uma opção: '))
