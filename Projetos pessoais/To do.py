@@ -13,7 +13,7 @@ tarefas = []
 
 def ver_tarefas():
     if len(tarefas) == 0:
-        print('Nenhuma tarefa cadastrada')
+        print('Nenhuma tarefa CADASTRADA')
     else:
         for tarefa in tarefas:
             print(tarefa)
