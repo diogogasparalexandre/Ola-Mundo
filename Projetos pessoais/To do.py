@@ -18,24 +18,27 @@ def ver_tarefas():
     else:
         for tarefa in tarefas:
             print(tarefa)
-            
+
+#Menu principal
 tarefas = []
 while True:
     menu()
-    escolha = int(input('Escolha uma opção: '))
-    if escolha == 1:
-        print('Ver tarefas')
-        ver_tarefas()
-    elif escolha == 2:
-        print('Adicionar tarefa')
-    elif escolha == 3:
-        print('Remover tarefa')
-    elif escolha == 4:
-        print('Sair')
-        break
+    try:
+        escolha = int(input('Escolha uma opção: '))
+        if escolha == 1:
+            print('Ver tarefas')
+            ver_tarefas()
+        elif escolha == 2:
+            adicionar_tarefa()
+        elif escolha == 3:
+            print('Remover tarefa')
+        elif escolha == 4:
+            print('Sair')
+            break
+        else:
+            print('Opção inválida. Por favor, escolha uma opção válida.')
+    except ValueError:
+        print('Opção inválida. Por favor, escolha uma opção válida.')
 
-
-
-#programa principal
 
 
