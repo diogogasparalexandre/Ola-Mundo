@@ -34,7 +34,7 @@ tarefas = []
 while True:
     menu()
     try:
-        escolha = int(input('Escolha uma opção: '))
+        escolha = int(input('Escolha uma option: '))
         if escolha == 1:
             print('Ver tarefas')
             ver_tarefas()
