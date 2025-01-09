@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Funçoes
 #Mensagem de boas-vindas e Menu de opções
 def menu():
@@ -18,7 +19,16 @@ def ver_tarefas():
     else:
         for tarefa in tarefas:
             print(tarefa)
-
+            
+#Adicionar tarefa
+def adicionar_tarefa():
+    tarefa = input('Digite a tarefa: ').title().strip()
+    if any(t['Nome'] == tarefa for t in tarefas):
+        print('Tarefa duplicada. Por favor, escolha outra tarefa.')
+        return
+    tarefas.append({'Nome': tarefa, 'Concluida': False})
+    print('({}) adicionada com sucesso!'.format(tarefa))
+    
 #Menu principal
 tarefas = []
 while True:
