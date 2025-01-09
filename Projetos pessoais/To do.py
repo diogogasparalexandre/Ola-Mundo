@@ -8,3 +8,4 @@ def menu():
     print('4 - Sair'.ljust(40))
     print('-'*40)
 
+#Recolher a escolha do usuário
