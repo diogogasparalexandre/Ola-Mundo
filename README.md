@@ -1,2 +1,3 @@
-# Ola Mundo
- Primeiro Repositorio Teste
+# To Do List
+ First personal project 
+ Simple to do list
