@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
 #Mensagem de boas-vindas e Menu de opções
-<<<<<<< Updated upstream
 
 #to do: carregar tarefas e adicionar tarefas
 #Criar arquivo tarefas.txt
