@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 #Mensagem de boas-vindas e Menu de opções
+<<<<<<< Updated upstream
 
 #to do: carregar tarefas e adicionar tarefas
 #Criar arquivo tarefas.txt
@@ -50,6 +51,9 @@ def salvar_tarefas(nome_arquivo, tarefas):
 nome_arquivo = criar_arquivo()
 tarefas = carregar_tarefas(nome_arquivo)
 
+=======
+# -*- coding: utf-8 -*-
+>>>>>>> Stashed changes
 def menu():
     print("=" * 40)
     print("SISTEMA DE GERENCIAMENTO DE TAREFAS".center(40))
