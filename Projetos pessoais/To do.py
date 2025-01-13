@@ -25,6 +25,7 @@ def criar_arquivo():
                 pass
     return temp
     
+print('Bom dia, seja bem-vindo ao To Do List!')
 
 def carregar_tarefas(nome_arquivo):
     try:
